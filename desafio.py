@@ -10,6 +10,8 @@ def run_desafio():
         driver.get("https://rpachallenge.com/?lang=EN")
 
         time.sleep(1)
+        inicio = time.time() # Iniciando o calculo de tempo
+        
 
         df = pd.read_excel('./challenge.xlsx', sheet_name="Sheet1")
         df.columns = df.columns.str.strip()  # remove espaços extras
@@ -35,7 +37,7 @@ def run_desafio():
             driver.find_element(By.CSS_SELECTOR, '[ng-reflect-name="labelEmail"]').send_keys(email)
             driver.find_element(By.CSS_SELECTOR, '[ng-reflect-name="labelPhone"]').send_keys(fone)
             
-            time.sleep(2)
+            # time.sleep(2)
             driver.find_element(By.CSS_SELECTOR, '.btn.uiColorButton').click()
 
             # Explicação do seletor CSS:
@@ -47,8 +49,15 @@ def run_desafio():
             # Usando By.CLASS_NAME (só funciona com uma classe por vez):
             # driver.find_element(By.CLASS_NAME, "btn").click()
             # ⚠️ Mas isso só funciona se não houver outras classes com o mesmo nome.
+            index = index + 1
+            # index = int(index) + 1
+            print(f"linha cadastrada: {index}") # verificação
 
+        fim = time.time() # Finalizando o calculo de tempo
+        print(f"Momento inicial: {inicio}")
+        print(f"Momento Final: {fim}")
+        duracao = fim - inicio
+        print(f"Tempo de execução: {duracao} segundos")
 
-        # time.sleep(5)
 
 run_desafio()
