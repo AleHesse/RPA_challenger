@@ -49,10 +49,8 @@ def run_desafio():
             # Usando By.CLASS_NAME (só funciona com uma classe por vez):
             # driver.find_element(By.CLASS_NAME, "btn").click()
             # ⚠️ Mas isso só funciona se não houver outras classes com o mesmo nome.
-            index = index + 1
-            # index = int(index) + 1
-            print(f"linha cadastrada: {index}") # verificação
-
+           
+        # calculo tempo de execução da aplicação após caregamento da página no navegador.
         fim = time.time() # Finalizando o calculo de tempo
         print(f"Momento inicial: {inicio}")
         print(f"Momento Final: {fim}")
