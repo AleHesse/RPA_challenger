@@ -9,7 +9,6 @@ def run_desafio():
 
         driver.get("https://rpachallenge.com/?lang=EN")
 
-
         time.sleep(1)
 
         df = pd.read_excel('./challenge.xlsx', sheet_name="Sheet1")
@@ -36,7 +35,7 @@ def run_desafio():
             driver.find_element(By.CSS_SELECTOR, '[ng-reflect-name="labelEmail"]').send_keys(email)
             driver.find_element(By.CSS_SELECTOR, '[ng-reflect-name="labelPhone"]').send_keys(fone)
             
-            time.sleep(1)
+            time.sleep(2)
             driver.find_element(By.CSS_SELECTOR, '.btn.uiColorButton').click()
 
             # Explicação do seletor CSS:
